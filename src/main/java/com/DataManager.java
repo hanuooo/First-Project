@@ -8,7 +8,7 @@ import com.itgroup.dao.CarDao;
 import java.util.List;
 import java.util.Scanner;
 
-public class DataManager {
+public class DataManager {// 챗Gpt
 
     private final Scanner scan;
     private final CarDao cdao;

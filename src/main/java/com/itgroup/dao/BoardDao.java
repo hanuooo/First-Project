@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class BoardDao extends SuperDao {
+public class BoardDao extends SuperDao { // 챗Gpt
 
     // ====== Scanner for interactive I/O ======
     private final Scanner scan;

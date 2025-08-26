@@ -1,6 +1,6 @@
 package com.itgroup.bean;
 
-public class Car {
+public class Car { // 챗Gpt
     // ✔ null 허용: 시퀀스/트리거, 입력 오류 대비
     private Integer id;
 

@@ -4,7 +4,7 @@ import com.itgroup.dao.BoardDao;
 
 import java.util.Scanner;
 
-public class Main {
+public class Main {// 챗Gpt
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         DataManager manager = new DataManager();

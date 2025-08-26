@@ -1,6 +1,6 @@
 package com.itgroup.bean;
 
-public class Board {
+public class Board { // 챗Gpt
     private Integer no;         // PK
     private String  writer;
     private String  subject;

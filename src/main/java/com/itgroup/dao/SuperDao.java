@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class SuperDao {
+public class SuperDao { // 챗Gpt
     public SuperDao(){
         String driver = "oracle.jdbc.driver.OracleDriver";
 
