@@ -1,6 +1,6 @@
 package com.itgroup.bean;
 
-public class Car { // 챗Gpt
+public class Car {
     // ✔ null 허용: 시퀀스/트리거, 입력 오류 대비
     private Integer id;
 
@@ -17,7 +17,7 @@ public class Car { // 챗Gpt
     private String  fuel;
 
     // === getter / setter ===
-    public Integer getId() { return id; }
+    public Integer getId() {return id; }
     public void setId(Integer id) { this.id = id; }
 
     public String getName() { return name; }

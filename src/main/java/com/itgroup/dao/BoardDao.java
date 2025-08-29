@@ -11,19 +11,20 @@ import java.util.Scanner;
 
 public class BoardDao extends SuperDao { // 챗Gpt
 
-    // ====== Scanner for interactive I/O ======
     private final Scanner scan;
 
     public BoardDao() {
         super();
-        this.scan = new Scanner(System.in); // ✅ NPE 방지
+        this.scan = new Scanner(System.in); //
     }
 
-    /* ================== 유틸 ================== */
+
 
     private static String dateToString(java.sql.Date d) {
-        if (d == null) return null;
-        return d.toLocalDate().format(DateTimeFormatter.ISO_DATE); // YYYY-MM-DD
+        if (d == null)
+        return null;
+
+        return d.toLocalDate().format(DateTimeFormatter.ISO_DATE);
     }
 
     private static java.sql.Date toSqlDate(String ymdOrNull) {
@@ -35,7 +36,7 @@ public class BoardDao extends SuperDao { // 챗Gpt
             LocalDate ld = LocalDate.parse(s);
             return java.sql.Date.valueOf(ld);
         } catch (Exception e) {
-            return null; // 잘못된 형식이면 NULL 저장
+            return null;
         }
     }
 
@@ -53,7 +54,7 @@ public class BoardDao extends SuperDao { // 챗Gpt
         return b;
     }
 
-    // ====== 입력 도우미 ======
+
     private String readLine(String prompt) {
         System.out.print(prompt);
         return scan.nextLine().trim();
@@ -66,7 +67,7 @@ public class BoardDao extends SuperDao { // 챗Gpt
         catch (NumberFormatException e) { System.out.println("⚠ 숫자 형식이 아닙니다. 빈값으로 처리합니다."); return null; }
     }
 
-    /* ================== 비인터랙티브 CRUD ================== */
+
 
     public List<Board> selectAll() {
         String sql = "SELECT no, writer, subject, content, car_id, created_at FROM boards ORDER BY no DESC";
@@ -201,9 +202,9 @@ public class BoardDao extends SuperDao { // 챗Gpt
         }
     }
 
-    /* ================== 인터랙티브 헬퍼 ================== */
 
-    // 글 등록 (no 직접입력 / 자동발급 선택)
+
+
     public void insertInteractive(boolean manualNo) {
         System.out.println("=== 게시글 등록 ===");
         Board b = new Board();
@@ -222,7 +223,7 @@ public class BoardDao extends SuperDao { // 챗Gpt
         System.out.println(cnt == 1 ? "등록 완료" : "등록 실패");
     }
 
-    // 글 수정 (no로 조회 후 변경)
+
     public void updateInteractive() {
         System.out.println("=== 게시글 수정 ===");
         Integer no = readIntOrNull("수정할 글번호: ");
@@ -247,7 +248,7 @@ public class BoardDao extends SuperDao { // 챗Gpt
         System.out.println(cnt == 1 ? "수정 완료" : (cnt == 0 ? "변경 없음" : "수정 실패"));
     }
 
-    // 글 삭제
+
     public void deleteInteractive() {
         System.out.println("=== 게시글 삭제 ===");
         Integer no = readIntOrNull("삭제할 글번호: ");
@@ -256,7 +257,7 @@ public class BoardDao extends SuperDao { // 챗Gpt
         System.out.println(cnt > 0 ? "삭제 완료" : (cnt == 0 ? "대상 없음" : "삭제 실패"));
     }
 
-    // 글 단건 조회
+
     public void findOneInteractive() {
         System.out.println("=== 게시글 조회 ===");
         Integer no = readIntOrNull("조회할 글번호: ");
@@ -275,7 +276,7 @@ public class BoardDao extends SuperDao { // 챗Gpt
                 safe(b.getContent()));
     }
 
-    // 전체 목록 출력(간단)
+
     public void selectAllInteractive() {
         System.out.println("=== 게시글 전체 ===");
         List<Board> list = selectAll();

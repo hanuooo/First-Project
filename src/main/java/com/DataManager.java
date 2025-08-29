@@ -20,7 +20,7 @@ public class DataManager {// 챗Gpt
         this.bdao = new BoardDao();
     }
 
-    /* ================= 유틸: 안전 입력 ================= */
+
 
     private String readLine(String prompt) {
         System.out.print(prompt);
@@ -42,21 +42,21 @@ public class DataManager {// 챗Gpt
         while (true) {
             Integer v = readIntOrNull(prompt);
             if (v != null) return v;
-            // 다시 입력
+
         }
     }
 
-    /* ================= Car 도메인 ================= */
 
-    // 차량 등록
+
+
     public void insertData() {
         Car bean = new Car();
 
-        // next()/nextInt() 혼용을 피하고 nextLine()만 사용
+
         Integer id = readIntOrNull("id 입력(빈값=수동 NULL): ");
         String name = readLine("이름 입력: ");
 
-        // 데모용 기본값 (원하면 모두 입력받도록 확장하세요)
+
         bean.setId(id);
         bean.setName(name.isEmpty() ? "noname" : name);
         bean.setPrice(2000);
@@ -75,7 +75,7 @@ public class DataManager {// 챗Gpt
         }
     }
 
-    // 차량 수정(이름만 예시)
+
     public void updateData() {
         int id = readIntRequired("수정할 차량 id 입력: ");
         Car bean = cdao.findOne(id);
@@ -92,7 +92,7 @@ public class DataManager {// 챗Gpt
         System.out.println(cnt == 1 ? "업데이트 성공" : (cnt == 0 ? "변경 없음" : "업데이트 실패"));
     }
 
-    // 차량 1건 조회
+
     public void getCarOne() {
         int id = readIntRequired("조회할 차량 ID: ");
         Car car = cdao.findOne(id);
@@ -156,7 +156,7 @@ public class DataManager {// 챗Gpt
         return (s == null || s.isBlank()) ? "-" : s;
     }
 
-    /* ================= Board 도메인 ================= */
+
 
     public void selectAllBroad() {
         List<Board> boardList = bdao.selectAll();

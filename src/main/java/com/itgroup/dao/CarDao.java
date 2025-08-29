@@ -12,7 +12,7 @@ public class CarDao extends SuperDao {
 
     public CarDao() {
         super();
-        // ❗ DAO 생성자에서 Scanner 사용/로직 실행 절대 금지 (NPE 원인)
+        //  DAO 생성자에서 Scanner 사용/로직 실행 절대 금지
     }
 
     /* -------------------- 유틸리티 -------------------- */

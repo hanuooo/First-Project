@@ -1,12 +1,12 @@
 package com.itgroup.bean;
 
-public class Board { // 챗Gpt
-    private Integer no;         // PK
+public class Board {
+    private Integer no;
     private String  writer;
     private String  subject;
     private String  content;
-    private Integer carId;      // cars.id (옵션)
-    private String  createdAt;  // "YYYY-MM-DD" 문자열로 단순 관리
+    private Integer carId;
+    private String  createdAt;
 
     public Integer getNo() { return no; }
     public void setNo(Integer no) { this.no = no; }
